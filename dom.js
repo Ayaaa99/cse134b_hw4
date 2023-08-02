@@ -16,6 +16,11 @@ function init() {
         modify();
     });
 
+    element = document.getElementById('advmodifyBtn');
+    element.addEventListener('click', function () {
+        advmodify();
+    });
+
     element = document.getElementById('addBtn');
     element.addEventListener('click', function () {
         add();
@@ -77,7 +82,6 @@ function printChilds(childNodes, prepend){
         childresult += prepend + `-- ${child.nodeName}\n`;
         childresult += printChilds(child.childNodes, prepend+'|');
     }
-    console.log(childresult);
     return childresult;
 }
 
@@ -103,6 +107,15 @@ function modify() {
     el.dataset.coolFactor = '9000'; //data-cool-factor="9000"
 
 }
+
+function advmodify() {
+    let el = document.querySelector('h1');
+    el.innerHTML = "DOM Manipulation is Fun!";
+    let colornum = (Math.floor(Math.random() * 6)).toString();
+    el.style.color = `var(--color${colornum})`;
+    el = document.getElementById('p1');
+    el.classList.add("shmancy");
+}   
 
 function add() {
 

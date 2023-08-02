@@ -52,6 +52,11 @@
             animation-direction: alternate;
         }
 
+        .shmancy {
+            color: var(--color4) !important;
+            font-size: 10rem !important;
+        }
+
         @keyframes backgroundColorPalette {
             0% {background: var(--color1);}
             25% {background: #60d394;}
@@ -99,6 +104,9 @@
             2.  Changes the color of the h1 to a random dark color from one of the 5 CSS variables defined in the style tag above.  You can use the Math.random() function.
             3. Sets the class of the p tag to "shmancy" so that does a new CSS text effect of your own design. You can find something on the internet (please cite the URL of your inspiration) or make up your own.  You can use the classList property as you like, but make sure you toggle the animation class on and off every time you push the button.
         -->
+        <label for="advmodifyBtn">Advanced Modification</label>
+        <input type="button" id="advmodifyBtn" value="Advanced Modify">
+
     </fieldset>
 
     <fieldset>
@@ -110,6 +118,7 @@
             Q3) Add a select menu that allows you to add a new element to the DOM.  The select menu should have the following options: Text Node, Comment, and Element. When you select one of these options and click the button, the appropriate element should be added to the DOM.  You may want to define an output tag to put the newly created elements in it and style it in a fashion with a border or background color, so you can tell it is new content.  You will need a corresponding text field to define the contents of the text node, comment text, or tag name you want to insert.  By default set the text of any added element to say "New Element" or "New Comment" or "New Text Node" depending on the type of element you are adding but add in the current date and time using a JS Date object.  You can use the toLocaleString() method to get a nicely formatted date and time string.
 
         -->
+        
     </fieldset>
 
     <fieldset>
