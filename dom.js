@@ -28,6 +28,7 @@ function init() {
 }
 
 function walk() {
+   document.getElementById('wlkresult').innerHTML='';
    let el;
 
    el = document.getElementById('p1');
@@ -56,21 +57,28 @@ function showNode(el) {
     let nodeName = el.nodeName;
     let nodeValue = el.nodeValue;
 
-    let output = document.getElementById('wlkresult')
+    const output = document.getElementById('wlkresult');
     output.innerHTML += `Node type: ${nodeType}\nNode name: ${nodeName}\nNode value: ${nodeValue}`+ "&#10&#13";
 }
 
 function advwalk() {
+    const output = document.getElementById('advwlkresult');
+    output.innerHTML = '';
     const para = document.querySelector('html');
+    output.innerHTML += `${para.nodeName}\n`;
     let childNodes = para.childNodes;
-    
+    output.innerHTML += printChilds(childNodes, '|');
 }
 
-function printChilds(childNodes){
+function printChilds(childNodes, prepend){
+    var childresult = '';
     for (let i = 0; i < childNodes.length; i++){
         let child = childNodes[i];
-        
+        childresult += prepend + `-- ${child.nodeName}\n`;
+        childresult += printChilds(child.childNodes, prepend+'|');
     }
+    console.log(childresult);
+    return childresult;
 }
 
 function modify() {
