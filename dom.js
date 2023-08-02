@@ -6,6 +6,11 @@ function init() {
         walk();
     });
 
+    element = document.getElementById('advwalkBtn');
+    element.addEventListener('click', function(){
+        advwalk();
+    });
+
     element = document.getElementById('modifyBtn');
     element.addEventListener('click', function () {
         modify();
@@ -51,7 +56,21 @@ function showNode(el) {
     let nodeName = el.nodeName;
     let nodeValue = el.nodeValue;
 
-    alert(`Node type: ${nodeType}\nNode name: ${nodeName}\nNode value: ${nodeValue}`);
+    let output = document.getElementById('wlkresult')
+    output.innerHTML += `Node type: ${nodeType}\nNode name: ${nodeName}\nNode value: ${nodeValue}`+ "&#10&#13";
+}
+
+function advwalk() {
+    const para = document.querySelector('html');
+    let childNodes = para.childNodes;
+    
+}
+
+function printChilds(childNodes){
+    for (let i = 0; i < childNodes.length; i++){
+        let child = childNodes[i];
+        
+    }
 }
 
 function modify() {
