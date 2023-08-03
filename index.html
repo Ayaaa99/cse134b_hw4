@@ -64,6 +64,15 @@
             75% {background: #ffd97d;}
             100% {background: #ff9b85;}
         }
+
+        .card{
+            display: block;
+            margin: 10px;
+            width: 30vw;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+            padding: 1em;
+            background-color: antiquewhite;
+        }
     </style>
 </head>
 <body>
@@ -166,6 +175,9 @@
         -->
         <label for="basicBtn">Basic Clone</label>
         <input type="button" id="basicBtn" value="Basic Clone">
+
+        <label for="advcloBtn">Advanced Clone</label>
+        <input type="button" id="advcloBtn" value="Advanced Clone">
     </fieldset>
 
 </form>
@@ -175,6 +187,15 @@
 <h2>Look out below these will get deleted if you press the buttons above!</h2>
 <p>I am scared of being deleted!</p>
 <p>Me too. Oh noes, here comes the <code>removeChild()</code> method, it's going to delete us!</p>
+
+<template>
+    <div class="card">
+        <img src="images/lucy-insert-coin-Cover-Art.png" alt="Card Image" style="width:100%;">
+        <h2>Title</h2>
+        <p>short text</p>
+        <a href="ucsd.edu">This is a link</a>
+    </div>
+</template>
 
 <!-- put all your new code in this dom.js file -->
 <script src="dom.js"></script>

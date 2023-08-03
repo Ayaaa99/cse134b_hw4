@@ -50,6 +50,11 @@ function init() {
     element.addEventListener('click', function () {
         basicclone();
     });
+
+    element = document.getElementById('advcloBtn');
+    element.addEventListener('click', function () {
+        advclone();
+    });
 }
 
 function walk() {
@@ -167,12 +172,16 @@ function add() {
 function addele() {
     const type = document.getElementById("elements").value;
     const out = document.querySelector('output');
+    const date = ' ' + (new Date()).toLocaleString();
+    console.log(date);
+
     if (type == 'textnode'){
         let text = 'New Text Node';
         let input = document.getElementById('addcontent').value;
         if (input != ''){
             text = input;
         }
+        text += date;
         out.innerHTML += `<p>${text}</p>`;
     }
     if (type == 'comment'){
@@ -181,6 +190,7 @@ function addele() {
         if (input != ''){
             comment = input;
         }
+        comment += date
         out.innerHTML += `<!--${comment}-->`;
     }
     if (type == 'element'){
@@ -194,6 +204,7 @@ function addele() {
         if (input2 != ''){
             tag = input2;
         }
+        content += date;
         out.innerHTML += `<${tag}>${content}</${tag}>`;
     }
 }
@@ -238,10 +249,32 @@ function slcdelete() {
     }
 }
 
-function basicclone(){
+function basicclone() {
     const toclone = document.getElementById('p1');
     let newnode = toclone.cloneNode(true);
     document.querySelector('output').appendChild(newnode);
+}
+
+function advclone() {
+    const imgs = ['images/image1.png','images/image2.jpg','images/image3.jpeg','images/image4.png','images/image5.jpg'];
+    const titles = ['Insert Coin','Childhood','Gatcha!','Inside','Dear.']
+    const texts = ['random text1','random text2','random text3','random text4','random text5'];
+    const links = ['https://rateyourmusic.com/release/ep/lucy/insert-coin/',
+                    'https://rateyourmusic.com/release/album/lucy/childhood/',
+                    'https://rateyourmusic.com/release/single/lucy/gatcha/',
+                    'https://rateyourmusic.com/release/single/lucy/inside/',
+                    'https://rateyourmusic.com/release/single/lucy/dear/'
+                ]
+    let index = Math.floor(Math.random() * 5);
+
+    let temp = document.querySelector('template');
+    let clon = temp.content.cloneNode(true);
+    let card = clon.childNodes[1];
+    card.childNodes[1].src = imgs[index];
+    card.childNodes[3].innerHTML = titles[index];
+    card.childNodes[5].innerHTML = texts[index];
+    card.childNodes[7].href = links[index];
+    document.body.appendChild(clon);
 }
 
 window.addEventListener('DOMContentLoaded', init);
