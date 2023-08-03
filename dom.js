@@ -35,6 +35,11 @@ function init() {
     element.addEventListener('click', function () {
         remove();
     });
+
+    element = document.getElementById('safedelBtn');
+    element.addEventListener('click', function () {
+        safedelete();
+    });
 }
 
 function walk() {
@@ -187,4 +192,32 @@ function remove() {
   document.body.removeChild(document.body.lastChild);
 }
 
+function safedelete() {
+    const el = document.querySelector('body');
+    findform(el);
+}
+
+function findform(el) {
+    while(el){
+        if(el.nodeName == 'FORM'){
+            break;
+        }else if (el.childNodes.length != 0) {
+            el = el.firstChild;
+            continue;
+        }else{
+            let parent = el.parentNode;
+            parent.removeChild(el);
+            el = parent;
+            continue;
+        }
+    }
+
+    let para = el.parentNode.parentNode;
+    console.log(para.childNodes);
+    for (let i = 1; i<para.childNodes.length; i++){
+        console.log(para.childNodes[i]);
+        para.removeChild(para.childNodes[i]);
+    }
+
+}
 window.addEventListener('DOMContentLoaded', init);
