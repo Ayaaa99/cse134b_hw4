@@ -1,6 +1,9 @@
 /* dom.js */
 
 function init() {
+
+    initBtns();
+
     let element = document.getElementById('walkBtn');
     element.addEventListener('click', function () {
         walk();
@@ -55,6 +58,58 @@ function init() {
     element.addEventListener('click', function () {
         advclone();
     });
+}
+
+function initBtns() {
+    const fieldsets = document.querySelectorAll('fieldset');
+    fieldsets[0].innerHTML += 
+    '<br>\
+    <textarea id="wlkresult" rows="4" cols="30"></textarea>\
+    <label for="advwalkBtn">Advanced Walk</label>\
+    <input type="button" id="advwalkBtn" value="Advanced Walk"><br>\
+    <textarea id="advwlkresult" rows="4" cols="30"></textarea>';
+
+    fieldsets[1].innerHTML +=
+    '<label for="advmodifyBtn">Advanced Modification</label>\
+    <input type="button" id="advmodifyBtn" value="Advanced Modify">';
+
+    fieldsets[2].innerHTML += 
+    '<label>Advanced Addition</label>\
+    <label for="elements">Choose an element:</label>\
+    <select id="elements">\
+        <option value="textnode">Text Node</option>\
+        <option value="comment">Comment</option>\
+        <option value="element">Element</option>\
+    </select><br>\
+    <label for="addtag">New element tag:</label>\
+    <textarea id="addtag" rows="1" cols="30"></textarea><br>\
+    <label for="addcontent">New element content:</label>\
+    <textarea id="addcontent" rows="4" cols="30"></textarea><br>\
+    <input type="button" id="addeleBtn" value="Add Element"><br>';
+
+    fieldsets[3].innerHTML +=
+    '<label for="safedelBtn">Safe Delete</label>\
+    <input type="button" id="safedelBtn" value="Safe Delete">\
+    <label for="delcontent">Content to delete:</label>\
+    <textarea id="delcontent" rows="4" cols="30"></textarea><br>\
+    <label for="slcdelBtn">Selector Delete</label>\
+    <input type="button" id="slcdelBtn" value="Selector Delete">';
+
+    fieldsets[4].innerHTML += 
+    '<label for="basicBtn">Basic Clone</label>\
+    <input type="button" id="basicBtn" value="Basic Clone">\
+    <label for="advcloBtn">Advanced Clone</label>\
+    <input type="button" id="advcloBtn" value="Advanced Clone">';
+
+    document.querySelector('body').innerHTML +=
+    '<template>\
+        <div class="card">\
+            <img src="images/lucy-insert-coin-Cover-Art.png" alt="Card Image" style="width:100%;">\
+            <h2>Title</h2>\
+            <p>short text</p>\
+            <a href="ucsd.edu">This is a link</a>\
+        </div>\
+    </template>';
 }
 
 function walk() {
@@ -170,10 +225,11 @@ function add() {
 }
 
 function addele() {
+    document.getElementById('p1').insertAdjacentHTML('afterend',
+    '<output>This is output for the new elements:</output>');
     const type = document.getElementById("elements").value;
     const out = document.querySelector('output');
     const date = ' ' + (new Date()).toLocaleString();
-    console.log(date);
 
     if (type == 'textnode'){
         let text = 'New Text Node';

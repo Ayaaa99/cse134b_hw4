@@ -79,9 +79,7 @@
 <!-- start of HTML demo -->
 <h1>Vanilla DOM Manipulation</h1>
 <p id="p1">This is a <em>test</em> of the DOM</p>
-<output>This is output for the new elements:
 
-</output>
 <section id="controls">
 <h2>Demos</h2>
 <form>
@@ -89,7 +87,7 @@
         <legend>Traversal</legend>
         <label for="walkBtn">Basic Traversal</label>
         <input type="button" id="walkBtn" value="Walk">
-        <br>
+        
         <!--
             Q1a) Modify the simple walk button example to not use alerts but instead to print out the node information on the page in a <textarea> within this fieldset. Using appropriate spacing or returns, so we can see each step
             Q1b) Add a new button "Advanced Walk" that does the following:
@@ -97,11 +95,6 @@
 
                 Hint: This walk can be done in at least two ways if not more. Doing a brute force traversal may not be the most direct way of doing things.  Looking over more advanced DOM discussions at MDN may reveal other approaches.
         -->
-        <textarea id="wlkresult" rows="4" cols="30"></textarea>
-
-        <label for="advwalkBtn">Advanced Walk</label>
-        <input type="button" id="advwalkBtn" value="Advanced Walk"><br>
-        <textarea id="advwlkresult" rows="4" cols="30"></textarea>
     </fieldset>
 
     <fieldset>
@@ -115,25 +108,10 @@
             2.  Changes the color of the h1 to a random dark color from one of the 5 CSS variables defined in the style tag above.  You can use the Math.random() function.
             3. Sets the class of the p tag to "shmancy" so that does a new CSS text effect of your own design. You can find something on the internet (please cite the URL of your inspiration) or make up your own.  You can use the classList property as you like, but make sure you toggle the animation class on and off every time you push the button.
         -->
-        <label for="advmodifyBtn">Advanced Modification</label>
-        <input type="button" id="advmodifyBtn" value="Advanced Modify">
-
     </fieldset>
 
     <fieldset>
         <legend>Add</legend>
-        <label for="elements">Choose an element:</label>
-        <select id="elements">
-            <option value="textnode">Text Node</option>
-            <option value="comment">Comment</option>
-            <option value="element">Element</option>
-        </select><br>
-        <label for="addtag">New element tag:</label>
-        <textarea id="addtag" rows="1" cols="30"></textarea><br>
-        <label for="addcontent">New element content:</label>
-        <textarea id="addcontent" rows="4" cols="30"></textarea><br>
-        <input type="button" id="addeleBtn" value="Add Element"><br>
-
         <label for="addBtn">Basic Addition</label>
         <input type="button" id="addBtn" value="Add">
 
@@ -141,7 +119,6 @@
             Q3) Add a select menu that allows you to add a new element to the DOM.  The select menu should have the following options: Text Node, Comment, and Element. When you select one of these options and click the button, the appropriate element should be added to the DOM.  You may want to define an output tag to put the newly created elements in it and style it in a fashion with a border or background color, so you can tell it is new content.  You will need a corresponding text field to define the contents of the text node, comment text, or tag name you want to insert.  By default set the text of any added element to say "New Element" or "New Comment" or "New Text Node" depending on the type of element you are adding but add in the current date and time using a JS Date object.  You can use the toLocaleString() method to get a nicely formatted date and time string.
 
         -->
-        
     </fieldset>
 
     <fieldset>
@@ -156,13 +133,6 @@
           Q4b) Delete by selector
             add a text field and a button to the fieldset that allows you to type a CSS selector and then delete all the elements that match that selector.
         -->
-        <label for="safedelBtn">Safe Delete</label>
-        <input type="button" id="safedelBtn" value="Safe Delete">
-
-        <label for="delcontent">Content to delete:</label>
-        <textarea id="delcontent" rows="4" cols="30"></textarea><br>
-        <label for="slcdelBtn">Selector Delete</label>
-        <input type="button" id="slcdelBtn" value="Selector Delete">
     </fieldset>
 
     <fieldset>
@@ -173,11 +143,6 @@
           Q5b) Add template at the bottom of the page with some HTML markup representing a "card" that would have and title, image, a short text paragraph and link.  This template should be hidden from view using the <template> tag.  Add a button "Advanced Clone" that clones the template and adds it to the DOM.  Generate some boilerplate text to put in the title and text put add in some random value or number, so you can tell each new card that you are adding.  Find a few images at Unsplash or other sites to use as the card image to make it interesting.  The card design is up to you, and you are more than welcome to get inspiration from online for design.  These cards might be what you could use for a portfolio or gallery of some sort so have fun as if you do this correctly, you can use for your portfolio site eventually.  Make sure you are using semantic HTML and simple CSS to style the cards.  You should use CSS variables.
 
         -->
-        <label for="basicBtn">Basic Clone</label>
-        <input type="button" id="basicBtn" value="Basic Clone">
-
-        <label for="advcloBtn">Advanced Clone</label>
-        <input type="button" id="advcloBtn" value="Advanced Clone">
     </fieldset>
 
 </form>
@@ -187,15 +152,6 @@
 <h2>Look out below these will get deleted if you press the buttons above!</h2>
 <p>I am scared of being deleted!</p>
 <p>Me too. Oh noes, here comes the <code>removeChild()</code> method, it's going to delete us!</p>
-
-<template>
-    <div class="card">
-        <img src="images/lucy-insert-coin-Cover-Art.png" alt="Card Image" style="width:100%;">
-        <h2>Title</h2>
-        <p>short text</p>
-        <a href="ucsd.edu">This is a link</a>
-    </div>
-</template>
 
 <!-- put all your new code in this dom.js file -->
 <script src="dom.js"></script>
