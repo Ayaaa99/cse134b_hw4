@@ -45,6 +45,11 @@ function init() {
     element.addEventListener('click', function () {
         slcdelete();
     });
+
+    element = document.getElementById('basicBtn');
+    element.addEventListener('click', function () {
+        basicclone();
+    });
 }
 
 function walk() {
@@ -231,6 +236,12 @@ function slcdelete() {
     for(let i = 0; i < todelete.length; i++){
         todelete[i].remove();
     }
+}
+
+function basicclone(){
+    const toclone = document.getElementById('p1');
+    let newnode = toclone.cloneNode(true);
+    document.querySelector('output').appendChild(newnode);
 }
 
 window.addEventListener('DOMContentLoaded', init);
