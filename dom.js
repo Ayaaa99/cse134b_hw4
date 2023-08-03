@@ -169,12 +169,17 @@ function addele() {
         out.innerHTML += `<!--${comment}-->`;
     }
     if (type == 'element'){
-        let element = '<p>New Element</p>';
-        let input = document.getElementById('addcontent').value;
-        if (input != ''){
-            element = input;
+        let content = 'New Element';
+        let tag = 'p';
+        let input1 = document.getElementById('addcontent').value;
+        if (input1 != ''){
+            content = input1;
         }
-        out.innerHTML += element;
+        let input2 = document.getElementById('addtag').value;
+        if (input2 != ''){
+            tag = input2;
+        }
+        out.innerHTML += `<${tag}>${content}</${tag}>`;
     }
 }
 
