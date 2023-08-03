@@ -26,6 +26,11 @@ function init() {
         add();
     });
 
+    element = document.getElementById("addeleBtn");
+    element.addEventListener('click', function () {
+        addele();
+    });
+
     element = document.getElementById('removeBtn');
     element.addEventListener('click', function () {
         remove();
@@ -141,6 +146,36 @@ function add() {
     // let oldP = document.getElementById('p1');
     // oldP.insertAdjacentHTML('afterend', '<p>This is a<em>test</em> of the DOM</p>');
     // clearly short hands are pretty easy!
+
+}
+
+function addele() {
+    const type = document.getElementById("elements").value;
+    const out = document.querySelector('output');
+    if (type == 'textnode'){
+        let text = 'New Text Node';
+        let input = document.getElementById('addcontent').value;
+        if (input != ''){
+            text = input;
+        }
+        out.innerHTML += `<p>${text}</p>`;
+    }
+    if (type == 'comment'){
+        let comment = 'New Comment';
+        let input = document.getElementById('addcontent').value;
+        if (input != ''){
+            comment = input;
+        }
+        out.innerHTML += `<!--${comment}-->`;
+    }
+    if (type == 'element'){
+        let element = '<p>New Element</p>';
+        let input = document.getElementById('addcontent').value;
+        if (input != ''){
+            element = input;
+        }
+        out.innerHTML += element;
+    }
 }
 
 function remove() {

@@ -70,7 +70,9 @@
 <!-- start of HTML demo -->
 <h1>Vanilla DOM Manipulation</h1>
 <p id="p1">This is a <em>test</em> of the DOM</p>
+<output>This is output for the new elements:
 
+</output>
 <section id="controls">
 <h2>Demos</h2>
 <form>
@@ -111,6 +113,16 @@
 
     <fieldset>
         <legend>Add</legend>
+        <label for="elements">Choose an element:</label>
+        <select id="elements">
+            <option value="textnode">Text Node</option>
+            <option value="comment">Comment</option>
+            <option value="element">Element</option>
+        </select><br>
+        <label for="addcontent">New element content:</label>
+        <textarea id="addcontent" rows="4" cols="30"></textarea><br>
+        <input type="button" id="addeleBtn" value="Add Element"><br>
+
         <label for="addBtn">Basic Addition</label>
         <input type="button" id="addBtn" value="Add">
 
