@@ -40,6 +40,11 @@ function init() {
     element.addEventListener('click', function () {
         safedelete();
     });
+
+    element = document.getElementById('slcdelBtn');
+    element.addEventListener('click', function () {
+        slcdelete();
+    });
 }
 
 function walk() {
@@ -213,11 +218,19 @@ function findform(el) {
     }
 
     let para = el.parentNode.parentNode;
-    console.log(para.childNodes);
-    for (let i = 1; i<para.childNodes.length; i++){
-        console.log(para.childNodes[i]);
-        para.removeChild(para.childNodes[i]);
+    const delnum = para.childNodes.length-1;
+    for (let i = 0; i<delnum; i++){
+        para.removeChild(para.lastChild);
     }
 
 }
+
+function slcdelete() {
+    let selector = document.getElementById('delcontent').value;
+    let todelete = document.querySelectorAll(selector);
+    for(let i = 0; i < todelete.length; i++){
+        todelete[i].remove();
+    }
+}
+
 window.addEventListener('DOMContentLoaded', init);
