@@ -110,6 +110,9 @@ function initBtns() {
             <a href="ucsd.edu">This is a link</a>\
         </div>\
     </template>';
+
+    document.getElementById('p1').insertAdjacentHTML('afterend',
+    '<output>This is output for the new elements:</output>');
 }
 
 function walk() {
@@ -225,8 +228,6 @@ function add() {
 }
 
 function addele() {
-    document.getElementById('p1').insertAdjacentHTML('afterend',
-    '<output>This is output for the new elements:</output>');
     const type = document.getElementById("elements").value;
     const out = document.querySelector('output');
     const date = ' ' + (new Date()).toLocaleString();
